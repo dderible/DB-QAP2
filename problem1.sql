@@ -40,18 +40,18 @@ INSERT INTO students (first_name, last_name, email, school_enrollment_date) VALU
 	('Logan', 'Janes', 'logan.janes@keyin.com', '2024-05-20'),
 	('Gavin', 'Janes', 'gavin.janes@keyin.com', '2024-05-20');
 
-INSERT INFO professors (first_name, last_name, department) VALUES
+INSERT INTO professors (first_name, last_name, department) VALUES
 	('Sam', 'Martino', 'Website Development'),
 	('Sebastian', 'More', 'AWS Development'),
 	('Jackie', 'Chamorro', 'Java Development'),
 	('Katia', 'Stone', 'UI/UX Development');
 
-INSERT INFO courses (course_name, course_description, professor_id) VALUES
+INSERT INTO courses (course_name, course_description, professor_id) VALUES
 	('Website Development', 'Introduction to Web Dev', 1),
 	('AWS Development', 'Introduction to Amazon Web Services', 2),
 	('UI/UX Development', 'Introduction to UI/UX Design', 3);
 
-INSERT INFO enrollments (student_id, course_id, enrollment_date) VALUES
+INSERT INTO enrollments (student_id, course_id, enrollment_date) VALUES
 	(1, 1, '2024-03-16'),
 	(2, 1, '2024-01-28'),
 	(3, 3, '2023-12-12'),
