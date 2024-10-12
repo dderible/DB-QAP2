@@ -57,3 +57,18 @@ INSERT INFO enrollments (student_id, course_id, enrollment_date) VALUES
 	(3, 3, '2023-12-12'),
 	(4, 2, '2024-05-20'),
 	(5, 2, '2024-05-20');
+
+--SQL QUERIES:
+SELECT concat(first_name, ' ', last_name) AS full_name
+FROM students
+JOIN enrollments ON students.id = enrollments.student_id
+JOIN courses ON enrollments.course_id = courses.id
+WHERE courses.course_name = 'Website Development';
+
+SELECT courses.course_name, concat(professors.first_name, ' ', professors.last_name) AS professor_full_name
+FROM courses
+JOIN professors ON courses.professor_id = professors.id;
+
+SELECT DISTINCT courses.course_name
+FROM courses
+JOIN enrollments ON courses.id = enrollments.course_id;
