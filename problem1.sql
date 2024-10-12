@@ -72,3 +72,8 @@ JOIN professors ON courses.professor_id = professors.id;
 SELECT DISTINCT courses.course_name
 FROM courses
 JOIN enrollments ON courses.id = enrollments.course_id;
+
+--UPDATE DATA
+UPDATE students
+SET email = 'updated.email@keyin.com'
+WHERE id = 2
