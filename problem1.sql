@@ -77,3 +77,7 @@ JOIN enrollments ON courses.id = enrollments.course_id;
 UPDATE students
 SET email = 'updated.email@keyin.com'
 WHERE id = 2
+
+--DELETE DATA
+DELETE FROM enrollments
+WHERE student_id = 5 AND course_id = 2;
