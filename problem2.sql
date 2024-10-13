@@ -90,5 +90,8 @@ SET stock_quantity = stock_quantity - 1
 WHERE products.product_name = 'Nintendo Switch';
 
 --DELETE DATA
+DELETE FROM order_items
+WHERE order_id = 1;
+
 DELETE FROM orders
-WHERE id = 3;
+WHERE id = 1;
