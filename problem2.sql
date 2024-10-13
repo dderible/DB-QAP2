@@ -77,3 +77,17 @@ JOIN orders ON order_items.order_id = orders.id
 JOIN products ON order_items.product_id = products.id
 JOIN customers ON orders.customer_id = customers.id
 WHERE orders.customer_id = 1;
+
+--UPDATE DATA
+-- Customer ID: 4 - Order: 4 Monitors, 1 Nintendo Switch
+UPDATE products
+SET stock_quantity = stock_quantity - 4
+WHERE products.product_name = 'Monitor';
+
+UPDATE products
+SET stock_quantity = stock_quantity - 1
+WHERE products.product_name = 'Nintendo Switch';
+
+--DELETE DATA
+DELETE FROM orders
+WHERE id = 3;
