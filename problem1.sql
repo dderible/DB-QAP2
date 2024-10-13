@@ -2,7 +2,7 @@
 
 --TABLES
 CREATE TABLE students (
-	id INT AUTO_INCREMENT PRIMARY KEY,
+	id SERIAL PRIMARY KEY,
 	first_name TEXT,
 	last_name TEXT,
 	email TEXT,
@@ -10,16 +10,17 @@ CREATE TABLE students (
 );
 
 CREATE TABLE professors (
-	id INT AUTO_INCREMENT PRIMARY KEY,
+	id SERIAL PRIMARY KEY,
 	first_name TEXT,
 	last_name TEXT,
 	department TEXT
 );
 
 CREATE TABLE courses (
-	id INT AUTO_INCREMENT PRIMARY KEY,
+	id SERIAL PRIMARY KEY,
 	course_name TEXT,
 	course_description TEXT,
+	professor_id INT,
 	FOREIGN KEY (professor_id) REFERENCES professors(id)
 );
 
@@ -76,7 +77,7 @@ JOIN enrollments ON courses.id = enrollments.course_id;
 --UPDATE DATA
 UPDATE students
 SET email = 'updated.email@keyin.com'
-WHERE id = 2
+WHERE id = 2;
 
 --DELETE DATA
 DELETE FROM enrollments

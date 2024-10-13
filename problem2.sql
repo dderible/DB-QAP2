@@ -2,24 +2,24 @@
 
 --TABLES
 CREATE TABLE products (
-	id int AUTO_INCREMENT PRIMARY KEY,
+	id SERIAL PRIMARY KEY,
 	product_name TEXT,
 	price DECIMAL(10, 2),
 	stock_quantity INT
 );
 
 CREATE TABLE customers (
-	id int AUTO_INCREMENT PRIMARY KEY,
+	id SERIAL PRIMARY KEY,
 	first_name TEXT,
 	last_name TEXT,
 	email TEXT
 );
 
 CREATE TABLE orders (
-	id int AUTO_INCREMENT PRIMARY KEY,
+	id SERIAL PRIMARY KEY,
 	customer_id INT,
 	order_date DATE,
-	FOREIGN KEY (customer_id) REFERENCES customers(id),
+	FOREIGN KEY (customer_id) REFERENCES customers(id)
 );
 
 CREATE TABLE order_items (
@@ -42,10 +42,11 @@ INSERT INTO products (product_name, price, stock_quantity) VALUES
 INSERT INTO customers (first_name, last_name, email) VALUES
 	('Declan', 'Derible', 'declan.derible@keyin.com'),
 	('Evan', 'Morris', 'evan.morris@keyin.com'),
+	('Aaron', 'Saunders', 'aaron.saunders@keyin.com'),
 	('Logan', 'Janes', 'logan.janes@keyin.com'),
 	('Gavin', 'Janes', 'gavin.janes@keyin.com');
 
-INSERT INTO orders (customer_id, order_date)
+INSERT INTO orders (customer_id, order_date) VALUES
 	(1, '2024-10-12'),
 	(2, '2024-09-28'),
 	(3, '2023-04-20'),
